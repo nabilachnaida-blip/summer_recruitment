@@ -204,7 +204,7 @@ body {
     justify-content: center;
     padding: 80px 28px 0;
     background: rgba(13, 111, 163, 0.96);
-    background-image: none;
+    background-image: linear-gradient(rgba(13, 111, 163, 0.90), rgba(13, 111, 163, 0.90)), url('assets/images/background.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
