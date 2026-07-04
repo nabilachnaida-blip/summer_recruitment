@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summer Recruitment 2026 — Stellantis Morocco</title>
+    <title id="pageTitle">Summer Recruitment 2026 — Stellantis Morocco</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,10 +17,12 @@
             </div>
             
             <div class="navbar-menu" id="navbarMenu">
-                <a href="#program" class="nav-link">Our Program</a>
-                <a href="#stellantis" class="nav-link">Discover Stellantis</a>
-                <a href="https://forms.google.com/placeholder" target="_blank" class="nav-link nav-button">Apply Now</a>
+                <a href="#program" class="nav-link" data-i18n="nav.program">Our Program</a>
+                <a href="#stellantis" class="nav-link" data-i18n="nav.discover">Discover Stellantis</a>
+                <a href="https://tally.so/r/xXBMe5" target="_blank" class="nav-link nav-button"><span data-i18n="nav.apply">Apply Now</span></a>
             </div>
+
+            <button id="langToggle" class="lang-toggle" aria-label="Switch language">FR</button>
 
             <button class="hamburger" id="hamburger">
                 <span></span>
@@ -34,20 +36,20 @@
     <section class="hero" id="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Summer Recruitment <span>2026</span></h1>
-            <p class="hero-subtitle">Join Stellantis Morocco and start your professional journey</p>
+            <h1 class="hero-title" id="heroTitle">Summer Recruitment <span id="heroYear">2026</span></h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Join Stellantis Morocco and start your professional journey</p>
             <div class="hero-meta">
-                <span class="meta-pill"><i class="fas fa-map-marker-alt"></i> Lieu : Stellantis Kénitra</span>
-                <span class="meta-pill"><i class="fas fa-sun"></i> Summer Recruitment</span>
+                <span class="meta-pill"><i class="fas fa-map-marker-alt"></i> <span data-i18n="meta.location">Location: Stellantis Kénitra</span></span>
+                <span class="meta-pill"><i class="fas fa-sun"></i> <span data-i18n="meta.recruitment">Summer Recruitment</span></span>
             </div>
-            <p class="hero-description">A unique opportunity to join one of the world's leading automotive manufacturers without an initial CV pre-selection.</p>
-            
-            <div class="hero-buttons">
-                <a href="https://forms.google.com/placeholder" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-arrow-right"></i> Apply Now
+                <p class="hero-description" data-i18n="hero.description">A unique opportunity to join one of the world's leading automotive manufacturers without an initial CV pre-selection.</p>
+
+                <div class="hero-buttons">
+                <a href="https://tally.so/r/xXBMe5" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i> <span data-i18n="btn.apply">Apply Now</span>
                 </a>
                 <a href="#program" class="btn btn-secondary">
-                    <i class="fas fa-play"></i> Discover the Program
+                    <i class="fas fa-play"></i> <span data-i18n="btn.discover">Discover the Program</span>
                 </a>
             </div>
         </div>
@@ -71,29 +73,29 @@
                 </div>
 
                 <div class="about-content">
-                    <h2 class="section-title">Why Stellantis Morocco?</h2>
+                    <h2 class="section-title" data-i18n="about.title">Why Stellantis Morocco?</h2>
                     <div class="title-bar"></div>
                     
-                    <p class="about-text">
+                    <p class="about-text" data-i18n="about.text">
                         Stellantis is one of the world's leading automotive manufacturers, bringing together iconic brands and innovative technologies. At the Kenitra plant, we are committed to excellence, innovation, and the development of young talent. Every year, we welcome motivated candidates who wish to gain valuable industrial experience while contributing to the future of sustainable mobility.
                     </p>
 
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-globe"></i>
-                            <span>Global Company</span>
+                            <span data-i18n="about.highlight1">Global Company</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-lightbulb"></i>
-                            <span>Innovation</span>
+                            <span data-i18n="about.highlight2">Innovation</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-rocket"></i>
-                            <span>Career Opportunities</span>
+                            <span data-i18n="about.highlight3">Career Opportunities</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-chart-line"></i>
-                            <span>Professional Growth</span>
+                            <span data-i18n="about.highlight4">Professional Growth</span>
                         </div>
                     </div>
                 </div>
@@ -104,10 +106,10 @@
     <!-- Summer Recruitment Program -->
     <section class="program-section" id="program">
         <div class="container">
-            <h2 class="section-title">Summer Recruitment Program</h2>
+            <h2 class="section-title" data-i18n="program.title">Summer Recruitment Program</h2>
             <div class="title-bar"></div>
 
-            <p class="section-description">
+            <p class="section-description" data-i18n="program.description">
                 Our Summer Recruitment Program is a unique opportunity for motivated candidates to join Stellantis Morocco during one of our largest recruitment campaigns of the year.
             </p>
 
@@ -130,21 +132,39 @@
                 <div class="program-features">
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Direct Access to Interviews</span>
+                        <span data-i18n="program.feature1">Direct Access to Interviews</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>No CV Pre-selection Required</span>
+                        <span data-i18n="program.feature2">No CV Pre-selection Required</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Demonstrate Your Potential</span>
+                        <span data-i18n="program.feature3">Demonstrate Your Potential</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Join a Global Leader</span>
+                        <span data-i18n="program.feature4">Join a Global Leader</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Positions Section -->
+    <section class="positions-section" id="positions-section">
+        <div class="container">
+            <div class="positions-inner">
+                <h2 class="section-title" data-i18n="positions.title">Open Positions</h2>
+                <p class="section-description positions-description" data-i18n="positions.description">These are the roles we are looking for in our summer recruitment campaign.</p>
+                <p class="hero-announcement" id="announcement" data-i18n="announcement">From July 13 — We are hiring for:</p>
+                <ul class="positions" id="positions">
+                    <li>Maintenance Unit Manager</li>
+                    <li>Manufacturing Unit Manager</li>
+                    <li>Maintenance Technician</li>
+                    <li>Facilities Technician</li>
+                    <li>Maintenance Apprentice</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -152,7 +172,7 @@
     <!-- Why Apply -->
     <section class="why-apply-section">
         <div class="container">
-            <h2 class="section-title">Why Apply?</h2>
+            <h2 class="section-title" data-i18n="why.title">Why Apply?</h2>
             <div class="title-bar"></div>
 
             <div class="cards-grid">
@@ -160,32 +180,32 @@
                     <div class="card-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Interview Without Initial Selection</h3>
-                    <p>Meet our recruiters directly and demonstrate your potential without barriers. Your motivation and skills matter most to us.</p>
+                    <h3 data-i18n="why.card1.title">Interview Without Initial Selection</h3>
+                    <p data-i18n="why.card1.text">Meet our recruiters directly and demonstrate your potential without barriers. Your motivation and skills matter most to us.</p>
                 </div>
 
                 <div class="benefit-card fade-up">
                     <div class="card-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Fast Recruitment Process</h3>
-                    <p>A simplified recruitment journey designed to reduce waiting time and get you results quickly.</p>
+                    <h3 data-i18n="why.card2.title">Fast Recruitment Process</h3>
+                    <p data-i18n="why.card2.text">A simplified recruitment journey designed to reduce waiting time and get you results quickly.</p>
                 </div>
 
                 <div class="benefit-card fade-up">
                     <div class="card-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3>Career Opportunities</h3>
-                    <p>Access long-term employment opportunities within Stellantis and grow with one of the world's largest automotive companies.</p>
+                    <h3 data-i18n="why.card3.title">Career Opportunities</h3>
+                    <p data-i18n="why.card3.text">Access long-term employment opportunities within Stellantis and grow with one of the world's largest automotive companies.</p>
                 </div>
 
                 <div class="benefit-card fade-up">
                     <div class="card-icon">
                         <i class="fas fa-book"></i>
                     </div>
-                    <h3>Professional Development</h3>
-                    <p>Develop your skills through an international industrial environment with world-class training and mentoring.</p>
+                    <h3 data-i18n="why.card4.title">Professional Development</h3>
+                    <p data-i18n="why.card4.text">Develop your skills through an international industrial environment with world-class training and mentoring.</p>
                 </div>
             </div>
         </div>
@@ -200,8 +220,8 @@
             <div class="timeline">
                 <div class="timeline-item fade-up">
                     <div class="timeline-number">1</div>
-                    <div class="timeline-title">Apply Online</div>
-                    <p>Fill out your information and express your interest in the program.</p>
+                    <div class="timeline-title" data-i18n="timeline.step1.title">Apply Online</div>
+                    <p data-i18n="timeline.step1.text">Fill out your information and express your interest in the program.</p>
                 </div>
 
                 <div class="timeline-arrow">
@@ -210,8 +230,8 @@
 
                 <div class="timeline-item fade-up">
                     <div class="timeline-number">2</div>
-                    <div class="timeline-title">Receive Invitation</div>
-                    <p>Get your interview invitation and select your preferred date.</p>
+                    <div class="timeline-title" data-i18n="timeline.step2.title">Receive Invitation</div>
+                    <p data-i18n="timeline.step2.text">Get your interview invitation and select your preferred date.</p>
                 </div>
 
                 <div class="timeline-arrow">
@@ -220,8 +240,8 @@
 
                 <div class="timeline-item fade-up">
                     <div class="timeline-number">3</div>
-                    <div class="timeline-title">Interview</div>
-                    <p>Meet with our recruitment teams and showcase your potential.</p>
+                    <div class="timeline-title" data-i18n="timeline.step3.title">Interview</div>
+                    <p data-i18n="timeline.step3.text">Meet with our recruitment teams and showcase your potential.</p>
                 </div>
 
                 <div class="timeline-arrow">
@@ -230,8 +250,8 @@
 
                 <div class="timeline-item fade-up">
                     <div class="timeline-number">4</div>
-                    <div class="timeline-title">Medical Visit</div>
-                    <p>Complete the medical examination for employment eligibility.</p>
+                    <div class="timeline-title" data-i18n="timeline.step4.title">Medical Visit</div>
+                    <p data-i18n="timeline.step4.text">Complete the medical examination for employment eligibility.</p>
                 </div>
 
                 <div class="timeline-arrow">
@@ -240,8 +260,8 @@
 
                 <div class="timeline-item fade-up">
                     <div class="timeline-number">5</div>
-                    <div class="timeline-title">Integration</div>
-                    <p>Welcome aboard! Start your journey with Stellantis.</p>
+                    <div class="timeline-title" data-i18n="timeline.step5.title">Integration</div>
+                    <p data-i18n="timeline.step5.text">Welcome aboard! Start your journey with Stellantis.</p>
                 </div>
             </div>
         </div>
@@ -250,7 +270,7 @@
     <!-- Our Values -->
     <section class="values-section">
         <div class="container">
-            <h2 class="section-title">Our Values</h2>
+            <h2 class="section-title" data-i18n="values.title">Our Values</h2>
             <div class="title-bar"></div>
 
             <div class="values-grid">
@@ -258,32 +278,32 @@
                     <div class="value-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Innovation</h3>
-                    <p>Driving the future of automotive technology and sustainable mobility.</p>
+                    <h3 data-i18n="values.card1.title">Innovation</h3>
+                    <p data-i18n="values.card1.text">Driving the future of automotive technology and sustainable mobility.</p>
                 </div>
 
                 <div class="value-card fade-up">
                     <div class="value-icon">
                         <i class="fas fa-people-group"></i>
                     </div>
-                    <h3>Team Spirit</h3>
-                    <p>Collaborating across cultures and disciplines to achieve excellence together.</p>
+                    <h3 data-i18n="values.card2.title">Team Spirit</h3>
+                    <p data-i18n="values.card2.text">Collaborating across cultures and disciplines to achieve excellence together.</p>
                 </div>
 
                 <div class="value-card fade-up">
                     <div class="value-icon">
                         <i class="fas fa-fire"></i>
                     </div>
-                    <h3>Performance</h3>
-                    <p>Striving for operational excellence and continuous improvement in everything we do.</p>
+                    <h3 data-i18n="values.card3.title">Performance</h3>
+                    <p data-i18n="values.card3.text">Striving for operational excellence and continuous improvement in everything we do.</p>
                 </div>
 
                 <div class="value-card fade-up">
                     <div class="value-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Respect</h3>
-                    <p>Valuing diversity, integrity, and the potential in every individual.</p>
+                    <h3 data-i18n="values.card4.title">Respect</h3>
+                    <p data-i18n="values.card4.text">Valuing diversity, integrity, and the potential in every individual.</p>
                 </div>
             </div>
         </div>
@@ -300,28 +320,28 @@
                 </div>
 
                 <div class="discover-content">
-                    <h2 class="section-title">Discover Stellantis</h2>
+                    <h2 class="section-title" data-i18n="discover.title">Discover Stellantis</h2>
                     <div class="title-bar"></div>
 
                     <div class="discover-items">
                         <div class="discover-item">
-                            <h4><i class="fas fa-location-dot"></i> Kenitra Plant</h4>
-                            <p>A state-of-the-art manufacturing facility at the forefront of automotive production.</p>
+                            <h4 data-i18n="discover.item1.title"><i class="fas fa-location-dot"></i> Kenitra Plant</h4>
+                            <p data-i18n="discover.item1.text">A state-of-the-art manufacturing facility at the forefront of automotive production.</p>
                         </div>
 
                         <div class="discover-item">
-                            <h4><i class="fas fa-microchip"></i> Automotive Innovation</h4>
-                            <p>Pioneering electric and hybrid technologies for sustainable transportation.</p>
+                            <h4 data-i18n="discover.item2.title"><i class="fas fa-microchip"></i> Automotive Innovation</h4>
+                            <p data-i18n="discover.item2.text">Pioneering electric and hybrid technologies for sustainable transportation.</p>
                         </div>
 
                         <div class="discover-item">
-                            <h4><i class="fas fa-cog"></i> Advanced Manufacturing</h4>
-                            <p>Utilizing Industry 4.0 technologies and best practices in production.</p>
+                            <h4 data-i18n="discover.item3.title"><i class="fas fa-cog"></i> Advanced Manufacturing</h4>
+                            <p data-i18n="discover.item3.text">Utilizing Industry 4.0 technologies and best practices in production.</p>
                         </div>
 
                         <div class="discover-item">
-                            <h4><i class="fas fa-users"></i> Professional Environment</h4>
-                            <p>A dynamic, inclusive workplace where talent thrives and careers flourish.</p>
+                            <h4 data-i18n="discover.item4.title"><i class="fas fa-users"></i> Professional Environment</h4>
+                            <p data-i18n="discover.item4.text">A dynamic, inclusive workplace where talent thrives and careers flourish.</p>
                         </div>
                     </div>
 
@@ -341,7 +361,7 @@
                         <img src="assets/images/logoStell.png" alt="Stellantis logo" class="brand-image">
                         <span>Stellantis</span>
                     </div>
-                    <p>Leading the global automotive industry with innovation, sustainability, and excellence.</p>
+                    <p data-i18n="footer.about">Leading the global automotive industry with innovation, sustainability, and excellence.</p>
                     <!--<div class="social-icons">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -351,26 +371,26 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4 data-i18n="footer.links">Quick Links</h4>
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#program">Program</a></li>
-                        <li><a href="#stellantis">About</a></li>
-                        <li><a href="#discover">Discover</a></li>
+                        <li><a href="#hero" data-i18n="footer.link.home">Home</a></li>
+                        <li><a href="#program" data-i18n="footer.link.program">Program</a></li>
+                        <li><a href="#stellantis" data-i18n="footer.link.about">About</a></li>
+                        <li><a href="#discover" data-i18n="footer.link.discover">Discover</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4 data-i18n="footer.contact">Contact</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Stellantis Kénitra, Morocco</p>
-                        <p><i class="fas fa-envelope"></i> recruitment@stellantis.com</p>
-                        <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer.contact.address">Stellantis Kénitra, Morocco</span></p>
+                        <p><i class="fas fa-envelope"></i> <span data-i18n="footer.contact.email">recruitment@stellantis.com</span></p>
+                        <p><i class="fas fa-phone"></i> <span data-i18n="footer.contact.phone">+212 5XX XX XX XX</span></p>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Program</h4>
+                    <h4 data-i18n="footer.program">Program</h4>
                     <ul>
                         <li><a href="#">Summer Recruitment</a></li>
                         <li><a href="#">Our Values</a></li>
@@ -381,7 +401,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Stellantis Morocco — Kenitra Plant. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 Stellantis Morocco — Kenitra Plant. All rights reserved.</p>
             </div>
         </div>
     </footer>
