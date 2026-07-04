@@ -17,6 +17,7 @@ const translations = {
         nav: { program: 'Our Program', discover: 'Discover Stellantis', apply: 'Apply Now' },
         hero: { subtitle: 'Join Stellantis Morocco and start your professional journey', description: "A unique opportunity to join one of the world's leading automotive manufacturers without an initial CV pre-selection." },
         meta: { location: 'Location: Stellantis Kénitra', recruitment: 'Summer Recruitment' },
+        video: { title: 'Kénitra Plant Capacity', caption: 'Mounir Kharbouche (Stellantis): "l\'usine de Kénitra a atteint une capacité de 535 000 véhicules"' },
         announcement: 'From July 13 — We are hiring for:',
         positions: {
             title: 'Open Positions',
@@ -37,6 +38,7 @@ const translations = {
         nav: { program: 'Notre programme', discover: 'Découvrir Stellantis', apply: 'Postuler' },
         hero: { subtitle: 'Rejoignez Stellantis Maroc et commencez votre parcours professionnel', description: "Une opportunité unique de rejoindre l'un des principaux constructeurs automobiles mondiaux sans présélection de CV." },
         meta: { location: 'Lieu : Stellantis Kénitra', recruitment: "Recrutement d'été" },
+        video: { title: 'Capacité de l\'usine de Kénitra', caption: 'Mounir Kharbouche (Stellantis) : "l\'usine de Kénitra a atteint une capacité de 535 000 véhicules"' },
         announcement: "À partir du 13 juillet — Nous recrutons pour :",
         positions: {
             title: 'Postes ouverts',
@@ -99,6 +101,45 @@ if (langToggle) {
         translatePage(currentLang);
     });
 }
+
+    // Try to load a local MP4 if present; otherwise fall back to YouTube embed
+    function loadLocalOrEmbedVideo() {
+        const container = document.getElementById('videoContainer');
+        if (!container) return;
+
+        const localPath = 'assets/videos/kenitra_capacity.mp4';
+
+        // Check for local file using a HEAD request
+        console.log('Checking local video at', localPath);
+        fetch(localPath, { method: 'HEAD' }).then(res => {
+            console.log('HEAD response for', localPath, res.status);
+            if (res.ok) {
+                console.log('Local video found — inserting <video> element');
+                const video = document.createElement('video');
+                video.controls = true;
+                video.playsInline = true;
+                video.preload = 'metadata';
+                video.style.width = '100%';
+                video.style.height = '100%';
+                const src = document.createElement('source');
+                src.src = localPath;
+                src.type = 'video/mp4';
+                video.appendChild(src);
+                container.innerHTML = '';
+                container.appendChild(video);
+            } else {
+                console.log('Local video not available (status', res.status, '), falling back to YouTube embed');
+                // fallback to YouTube embed
+                container.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/O8qq_szw0nw" title="Mounir Kharbouche — L\'usine de Kénitra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            }
+        }).catch(() => {
+            console.log('Error while checking local video, inserting YouTube fallback');
+            container.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/O8qq_szw0nw" title="Mounir Kharbouche — L\'usine de Kénitra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        });
+    }
+
+    // run after initial translate so caption/title are set
+    document.addEventListener('DOMContentLoaded', loadLocalOrEmbedVideo);
 
 window.addEventListener('scroll', () => {
     // Animate elements on scroll
