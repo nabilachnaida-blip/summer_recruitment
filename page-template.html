@@ -106,13 +106,13 @@ Update the page-specific content as needed
     <!-- Navbar (same as index.html) -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
-            <div class="navbar-brand">
+            <a class="navbar-brand" href="#">
                 <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
                     <path d="M20 8v24M8 20h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
                 <span class="brand-text">Stellantis</span>
-            </div>
+            </a>
             
             <div class="navbar-menu" id="navbarMenu">
                 <a href="index.html#program" class="nav-link">Our Program</a>
@@ -120,11 +120,14 @@ Update the page-specific content as needed
                 <a href="https://forms.google.com/placeholder" target="_blank" class="nav-link nav-button">Apply Now</a>
             </div>
 
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <button id="langToggle" class="lang-toggle" aria-label="Switch language">FR</button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -219,7 +222,7 @@ Update the page-specific content as needed
                     <div class="contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> Kenitra, Morocco</p>
                         <p><i class="fas fa-envelope"></i> recruitment@stellantis.com</p>
-                        <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
+                        <p><i class="fas fa-phone"></i> </p>
                     </div>
                 </div>
 

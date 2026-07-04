@@ -11,24 +11,25 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
-            <div class="navbar-brand">
+            <a class="navbar-brand" href="#">
                 <img src="assets/images/logoStell.png" alt="Stellantis logo" class="brand-image brand-image-stellantis">
                 <img src="assets/images/home_logo.png" alt="Application logo" class="brand-image brand-image-app">
-            </div>
-            
-            <div class="navbar-menu" id="navbarMenu">
+            </a>
+
+            <div class="navbar-menu" id="navbarMenu" role="navigation" aria-label="Main Navigation">
                 <a href="#program" class="nav-link" data-i18n="nav.program">Our Program</a>
                 <a href="#stellantis" class="nav-link" data-i18n="nav.discover">Discover Stellantis</a>
                 <a href="https://tally.so/r/xXBMe5" target="_blank" class="nav-link nav-button"><span data-i18n="nav.apply">Apply Now</span></a>
             </div>
 
-            <button id="langToggle" class="lang-toggle" aria-label="Switch language">FR</button>
-
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <button id="langToggle" class="lang-toggle" aria-label="Switch language">FR</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -42,7 +43,8 @@
                 <span class="meta-pill"><i class="fas fa-map-marker-alt"></i> <span data-i18n="meta.location">Location: Stellantis Kénitra</span></span>
                 <span class="meta-pill"><i class="fas fa-sun"></i> <span data-i18n="meta.recruitment">Summer Recruitment</span></span>
             </div>
-                <p class="hero-description" data-i18n="hero.description">A unique opportunity to join one of the world's leading automotive manufacturers without an initial CV pre-selection.</p>
+            <p class="hero-announcement" id="announcement" data-i18n="announcement">From July 13 — We are hiring for:</p>
+            <p class="hero-description" data-i18n="hero.description">A unique opportunity to join one of the world's leading automotive manufacturers without an initial CV pre-selection.</p>
 
                 <div class="hero-buttons">
                 <a href="https://tally.so/r/xXBMe5" target="_blank" class="btn btn-primary">
@@ -157,7 +159,6 @@
             <div class="positions-inner">
                 <h2 class="section-title" data-i18n="positions.title">Open Positions</h2>
                 <p class="section-description positions-description" data-i18n="positions.description">These are the roles we are looking for in our summer recruitment campaign.</p>
-                <p class="hero-announcement" id="announcement" data-i18n="announcement">From July 13 — We are hiring for:</p>
                 <ul class="positions" id="positions">
                     <li>Maintenance Unit Manager</li>
                     <li>Manufacturing Unit Manager</li>

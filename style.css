@@ -72,6 +72,12 @@ body {
     justify-content: space-between;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -121,6 +127,28 @@ body {
     align-items: center;
     gap: 32px;
     list-style: none;
+}
+
+.navbar,
+.navbar *,
+.navbar-menu,
+.navbar-menu *,
+.navbar-menu a,
+.navbar-menu span,
+.navbar li,
+.navbar-menu li {
+    list-style: none !important;
+}
+
+.navbar::before,
+.navbar::after,
+.navbar-menu::before,
+.navbar-menu::after,
+.nav-link::before,
+.nav-link::after,
+.navbar li::marker,
+.navbar-menu li::marker {
+    content: none !important;
 }
 
 .nav-link {
@@ -184,11 +212,15 @@ body {
     text-align: center;
 }
 
+.hero .hero-announcement,
 .positions-section .hero-announcement {
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
     color: var(--text-dark);
     font-size: 20px;
     font-weight: 800;
+    text-align: center;
+    width: 100%;
+    max-width: 720px;
 }
 
 .positions-section .section-title {
@@ -235,8 +267,6 @@ body {
     border-color: var(--teal-light);
 }
 
-.hero-announcement {
-    display: none;
 }
 
 .hamburger {
