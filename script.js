@@ -583,28 +583,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
-// Technical Interviewer Access (access code prompt)
+// Technical Interviewer Access (code prompt + URL key)
 // ============================================
 
-// Clicking the button prompts for a shared access code known only to technical
-// interviewers; entering it correctly opens the interview form in a new tab.
-// This is NOT real security (anyone reading this file can find the code) — it
-// just keeps the link from being obvious to casual visitors.
-(function setupTechInterviewButton() {
+// Two ways in for technical interviewers, both sharing the same form link:
+//  1) Click the "Interviewer Access" button and enter the access code (000).
+//  2) Open the page with ?key=stell-tech-2026 in the URL, which opens the
+//     form automatically.
+// Neither is real security (anyone reading this file can find the values) —
+// they just keep the link from being obvious to casual visitors.
+(function setupTechInterviewAccess() {
     const TECH_ACCESS_CODE = '000';
+    const TECH_ACCESS_KEY = 'stell-tech-2026';
     const TECH_FORM_URL = 'https://tally.so/r/ZjykYz';
-    const btn = document.getElementById('techInterviewBtn');
-    if (!btn) return;
 
-    btn.addEventListener('click', () => {
-        const code = window.prompt('Enter technical interviewer access code:');
-        if (code === null) return;
-        if (code.trim() === TECH_ACCESS_CODE) {
-            window.open(TECH_FORM_URL, '_blank', 'noopener');
-        } else {
-            alert('Incorrect access code.');
-        }
-    });
+    const btn = document.getElementById('techInterviewBtn');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            const code = window.prompt('Enter technical interviewer access code:');
+            if (code === null) return;
+            if (code.trim() === TECH_ACCESS_CODE) {
+                window.open(TECH_FORM_URL, '_blank', 'noopener');
+            } else {
+                alert('Incorrect access code.');
+            }
+        });
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('key') === TECH_ACCESS_KEY) {
+        window.open(TECH_FORM_URL, '_blank', 'noopener');
+    }
 })();
 
 // ============================================
