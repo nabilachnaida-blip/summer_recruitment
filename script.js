@@ -583,19 +583,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
-// Technical Interviewer Access (secret URL parameter)
+// Technical Interviewer Access (access code prompt)
 // ============================================
 
-// Only technical interviewers who have the shared link with ?key=... will see this button.
-// This is NOT real security (anyone reading this file can find the value) — it just keeps
-// the link out of the public page for casual visitors.
-(function revealTechInterviewButton() {
-    const TECH_ACCESS_KEY = '000';
-    const params = new URLSearchParams(window.location.search);
+// Clicking the button prompts for a shared access code known only to technical
+// interviewers; entering it correctly opens the interview form in a new tab.
+// This is NOT real security (anyone reading this file can find the code) — it
+// just keeps the link from being obvious to casual visitors.
+(function setupTechInterviewButton() {
+    const TECH_ACCESS_CODE = '000';
+    const TECH_FORM_URL = 'https://tally.so/r/ZjykYz';
     const btn = document.getElementById('techInterviewBtn');
-    if (btn && params.get('key') === TECH_ACCESS_KEY) {
-        btn.style.display = '';
-    }
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+        const code = window.prompt('Enter technical interviewer access code:');
+        if (code === null) return;
+        if (code.trim() === TECH_ACCESS_CODE) {
+            window.open(TECH_FORM_URL, '_blank', 'noopener');
+        } else {
+            alert('Incorrect access code.');
+        }
+    });
 })();
 
 // ============================================
