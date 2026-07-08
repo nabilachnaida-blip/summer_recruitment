@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // This is NOT real security (anyone reading this file can find the value) — it just keeps
 // the link out of the public page for casual visitors.
 (function revealTechInterviewButton() {
-    const TECH_ACCESS_KEY = 'stell-tech-2026';
+    const TECH_ACCESS_KEY = '000';
     const params = new URLSearchParams(window.location.search);
     const btn = document.getElementById('techInterviewBtn');
     if (btn && params.get('key') === TECH_ACCESS_KEY) {
