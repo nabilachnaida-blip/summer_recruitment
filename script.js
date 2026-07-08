@@ -583,11 +583,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
-// Technical Interviewer Access (code prompt + URL key)
+// Technical Interviewer Access (code modal + URL key)
 // ============================================
 
 // Two ways in for technical interviewers, both sharing the same form link:
-//  1) Click the "Interviewer Access" button and enter the access code (000).
+//  1) Click the "Interviewer Access" button and enter the access code (000)
+//     in the styled modal card.
 //  2) Open the page with ?key=stell-tech-2026 in the URL, which opens the
 //     form automatically.
 // Neither is real security (anyone reading this file can find the values) —
@@ -597,18 +598,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const TECH_ACCESS_KEY = 'stell-tech-2026';
     const TECH_FORM_URL = 'https://tally.so/r/ZjykYz';
 
-    const btn = document.getElementById('techInterviewBtn');
-    if (btn) {
-        btn.addEventListener('click', () => {
-            const code = window.prompt('Enter technical interviewer access code:');
-            if (code === null) return;
-            if (code.trim() === TECH_ACCESS_CODE) {
-                window.open(TECH_FORM_URL, '_blank', 'noopener');
-            } else {
-                alert('Incorrect access code.');
-            }
+    const openBtn = document.getElementById('techInterviewBtn');
+    const overlay = document.getElementById('accessModalOverlay');
+    const closeBtn = document.getElementById('accessModalClose');
+    const submitBtn = document.getElementById('accessModalSubmit');
+    const input = document.getElementById('accessCodeInput');
+    const error = document.getElementById('accessModalError');
+
+    function openModal() {
+        if (!overlay) return;
+        error.classList.remove('show');
+        input.value = '';
+        overlay.classList.add('active');
+        input.focus();
+    }
+
+    function closeModal() {
+        if (!overlay) return;
+        overlay.classList.remove('active');
+    }
+
+    function submitCode() {
+        if (input.value.trim() === TECH_ACCESS_CODE) {
+            closeModal();
+            window.open(TECH_FORM_URL, '_blank', 'noopener');
+        } else {
+            error.classList.add('show');
+            input.focus();
+        }
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (overlay) {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeModal();
         });
     }
+    if (submitBtn) submitBtn.addEventListener('click', submitCode);
+    if (input) {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') submitCode();
+        });
+    }
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
 
     const params = new URLSearchParams(window.location.search);
     if (params.get('key') === TECH_ACCESS_KEY) {

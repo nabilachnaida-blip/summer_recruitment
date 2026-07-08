@@ -1367,3 +1367,115 @@ section {
         font-size: 13px;
     }
 }
+
+/* ============================================
+   Technical Interviewer Access Modal
+============================================ */
+
+.access-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 44, 90, 0.55);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.access-modal-overlay.active {
+    display: flex;
+}
+
+.access-modal {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px 28px 28px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(7, 44, 90, 0.3);
+    animation: accessModalPop 0.25s ease;
+}
+
+@keyframes accessModalPop {
+    from { opacity: 0; transform: translateY(10px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.access-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--text-gray);
+    cursor: pointer;
+}
+
+.access-modal-close:hover {
+    color: var(--text-dark);
+}
+
+.access-modal-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.access-modal-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.access-modal-text {
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-bottom: 18px;
+}
+
+.access-modal-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.access-modal-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.access-modal-error {
+    display: none;
+    color: #e53e3e;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.access-modal-error.show {
+    display: block;
+}
+
+.access-modal-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+}

@@ -418,6 +418,19 @@
         </div>
     </footer>
 
+    <!-- Technical Interviewer Access Modal -->
+    <div class="access-modal-overlay" id="accessModalOverlay">
+        <div class="access-modal">
+            <button type="button" class="access-modal-close" id="accessModalClose" aria-label="Close">&times;</button>
+            <div class="access-modal-icon"><i class="fas fa-lock"></i></div>
+            <h3 class="access-modal-title">Interviewer Access</h3>
+            <p class="access-modal-text">Enter your access code to open the interview form.</p>
+            <input type="text" inputmode="numeric" id="accessCodeInput" class="access-modal-input" placeholder="Access code" autocomplete="off">
+            <p class="access-modal-error" id="accessModalError">Incorrect code, please try again.</p>
+            <button type="button" class="btn btn-primary access-modal-submit" id="accessModalSubmit">Continue</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
