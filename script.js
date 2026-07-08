@@ -581,6 +581,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
+// Technical Interviewer Access (secret URL parameter)
+// ============================================
+
+// Only technical interviewers who have the shared link with ?key=... will see this button.
+// This is NOT real security (anyone reading this file can find the value) — it just keeps
+// the link out of the public page for casual visitors.
+(function revealTechInterviewButton() {
+    const TECH_ACCESS_KEY = 'stell-tech-2026';
+    const params = new URLSearchParams(window.location.search);
+    const btn = document.getElementById('techInterviewBtn');
+    if (btn && params.get('key') === TECH_ACCESS_KEY) {
+        btn.style.display = '';
+    }
+})();
+
+// ============================================
 // Error Handling
 // ============================================
 
