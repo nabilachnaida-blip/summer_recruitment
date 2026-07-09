@@ -152,16 +152,20 @@ window.addEventListener('scroll', () => {
 
 if (hamburger) {
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+        const isActive = hamburger.classList.toggle('active');
         navbarMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', String(isActive));
     });
 }
 
-// Close menu when a link is clicked
-const navLinks = navbarMenu.querySelectorAll('a');
+// Close menu when a link or button is clicked
+const navLinks = navbarMenu.querySelectorAll('a, button');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        if (hamburger) hamburger.classList.remove('active');
+        if (hamburger) {
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
         navbarMenu.classList.remove('active');
     });
 });
