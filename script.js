@@ -593,10 +593,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // Two ways in for technical interviewers, both sharing the same form link:
 //  1) Click the "Interviewer Access" button and enter the access code (000)
 //     in the styled modal card.
-//  2) Open the page with ?key=stell-tech-2026 in the URL, which opens the
-//     form automatically.
+//  2) Open the page with ?key=stell-tech-2026 in the URL, which pre-fills
+//     the code so a single click opens the form.
 // Neither is real security (anyone reading this file can find the values) —
 // they just keep the link from being obvious to casual visitors.
+//
+// Note: we never call window.open() automatically on page load. Browsers
+// (especially mobile/in-app browsers) treat an un-clicked window.open() as
+// a popup-blocker violation and some of them respond by navigating the
+// current tab to that URL instead of blocking it — which looked like the
+// whole site "redirecting" to the Tally form. Opening the form must always
+// be the direct result of a real click.
 (function setupTechInterviewAccess() {
     const TECH_ACCESS_CODE = '000';
     const TECH_ACCESS_KEY = 'stell-tech-2026';
@@ -651,7 +658,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const params = new URLSearchParams(window.location.search);
     if (params.get('key') === TECH_ACCESS_KEY) {
-        window.open(TECH_FORM_URL, '_blank', 'noopener');
+        openModal();
+        input.value = TECH_ACCESS_CODE;
     }
 })();
 
